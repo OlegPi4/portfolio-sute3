@@ -127,6 +127,7 @@ button, a{
    };
    & .button-big:hover{
       color: var(--color-hoverBlackButton);
+      background-color: rgba($color: #000000, $alpha: 0.8);
    }
 }
 .header__title{
@@ -146,6 +147,8 @@ button, a{
 .header__content__right {
    & img{
       margin-top: -50px;
+      width: 100%;
+      height: auto;
       
    }
 }
@@ -241,19 +244,21 @@ button, a{
    }
    
 }
-.item-flex {
+.s-item4 { 
+   grid-area: four;
    display: flex;
    justify-content: space-between;
    max-width: 885px;
    & img {
       padding-top: 47px;
       padding-right: 27px;
+    
    }
 }
-.s-item4 { grid-area: four;}
 
 .s-item1 img {
    padding: 35px 20px 5px 20px;
+   object-fit: fill;
 }
 .s-item4__flex {
    display: flex;
@@ -265,10 +270,15 @@ button, a{
    }
    & p{
       max-width: 420px;
+      min-width: 300px;
       margin-bottom: 14px;
    }
    & button {
       max-width: 218px;
+   }
+   & img {
+      width: 100%;
+      height: auto;
    }
   
 }
@@ -319,87 +329,88 @@ button, a{
 .pricing__title {
    padding-top: 9px;
    text-align: center;
+   margin-bottom: 52px;
    }
 .pricing__items {
-   padding-top: 55px;
-   display: flex;
-   justify-content: space-between;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: 628px;
+   column-gap: 40px;
 }
 .pricing__item {
-   & p {
-      max-width: 450px;
-   }
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
-.price-lable {
+.pricing__item__img {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.up-1 h3 {
+   padding-top: 42px;
+}
+.up-2 h3 {
+   padding-top: 72px;
+   padding-left: 14px;
+}
+.up-3 h3 {
+   padding-top: 14px;
+   padding-left: 20px;
+   
+}
+.up-1 p {
+   padding-top: 19px;
+}
+.up-2 p {
+   padding-top: 22px;
+   padding-left: 16px;
+}
+.up-3 p {
+   padding-left: 20px;
+}
+.pricing__item__lable {
+   background-color: #eee;
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
-   font-size: 18px;
-   line-height: 27px;
-   background-color: #eee;
+   justify-content: space-around;
    max-width: 240px;
-   max-height: 45px;
-   border-radius: 5px;
-   padding: 0 12px;
+   height: 45px;
+   border-radius: 6px;
 }
-.p-item1 {
-   & img{
-      padding-left: 25px;
-   }
-   & h3 {
-      padding-top: 40px;
-   }
-   & .p-item__text {
-      padding-top: 18px;
-      margin-bottom: 30px;
-   }
-}
-.price-number {
+.lable__price {
+   color: var(--color-text1);
    font-size: 30px;
    line-height: 45px;
 }
-.per-month{
+.lable__text {
+   color: #546269;
    font-size: 18px;
    line-height: 27px;
-   color: #546269;
 }
-.p-item2{
-   padding-left: 39px;
-   padding-top: 26px;
-   & h3 {
-      padding-top: 42px;
-      padding-left: 2px;
-   }
-   & .p-item__text{
-      padding-top: 23px;
-      padding-left: 2px;
-      margin-bottom: 58px;
-   }
+.price-l2 {
+   margin-left: 16px;
 }
-.p-item3{
-   img{
-      padding-left: 44px;
-   }
-   & h3 {
-      padding-top: 13px;
-   }
-   & .p-item__text{
-      padding-top: 18px;
-      margin-bottom: 58px;
-   }
+.price-l3 {
+   margin-left: 20px;
 }
+
+
 /*Contact*/
 .contact {
-   padding-top: 160px;
-   padding-bottom: 72px;
+   padding-top: 120px;
+   padding-bottom: 100px;
 }
 .contact__wrapper {
 display: flex;
+justify-content: space-between;
 }
 .contact__img {
+   max-width: 447px;
+   max-height: 429px;
    margin-left: -18px;
-   padding-right: 111px;
-
+   width: 100%;
+   height: auto;
 }
 .contact__contain {
    padding-top: 32px;
@@ -484,7 +495,53 @@ input[type="email"] {
 }
 
 /*Media*/
-
+@media  screen and (max-width: 1260px) {
+   .header__title h1 {
+      font-size: 48px;
+      line-height: 60px;
+      font-weight: 600;
+      max-width: 386px;
+   }
+   .header__content__left p {
+         padding-top: 30px;
+         font-size: 24px;
+         color: var(--color--text2);
+         line-height: 36px;
+         max-width: 526px;
+         margin-bottom: 40px;
+   }   
+   .header__content__left .button-big {
+      padding: 24px 80px;
+      color: #fff;
+      font-size: 28px;
+      line-height: 40px;
+      border-radius: 12px
+   };
+   .skills {
+      padding-top: 80px;
+      margin-bottom: 80px;
+   }
+   .s-item4__flex h3 {
+      padding-top: 20px;
+   }
+   .about {
+      padding-top: 100px;
+      margin-bottom: 100px;
+   }
+   .contact {
+      padding-top: 100px;
+   }
+   .contact__email {
+      padding-top: 20px;
+      flex-direction: column;
+   }
+   .contact__text {
+      padding-top: 20px;
+   }
+   .contact__email input {
+      margin-bottom: 20px;
+   }
+}
 @media  screen and (max-width: 992px) {
 }
 @media  screen and (max-width: 767px) {
