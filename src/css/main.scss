@@ -225,8 +225,7 @@ h3{
    padding-left: 30px;
    & p{
       padding-top: 8px;
-      line-height: 24px;
-      color: var(--color--text2);
+      
       max-width: 345px;
    }
 }
@@ -242,8 +241,7 @@ h3{
    padding-left: 30px;
    & p{
       padding-top: 4px;
-      line-height: 24px;
-      color: var(--color--text2);
+
       max-width: 360px;
    } 
 }
@@ -267,8 +265,6 @@ h3{
    padding-left: 36px;
    & p{
       padding-top: 10px;
-      line-height: 24px;
-      color: var(--color--text2);
       max-width: 360px;
    } 
    & button {
@@ -533,6 +529,7 @@ input[type="email"] {
       padding-left: 10px;
       max-width: 470px;
    }
+   
    input {
       width: 323px;
       height: 60px;
@@ -846,23 +843,15 @@ input[type="email"] {
    .line:last-child{
       width: 21px;
    }
-   
-   
-   .up-1  {
-      & img {
-         max-width: 240px;
-      }
-   }   
-   .up-2  {
-      & img {
-         max-width: 240px;
-      }
-   }   
-   .up-3  {
-      & img {
-         max-width: 240px;
-      }
-   }   
+   .speaking__img img,
+   .writing__img img,
+   .reading__img img,
+   .listening__img img {
+      max-width: 240px;
+   }
+   .pricing__item__img img {
+      max-width: 240px;
+   }  
    .footer__item {
       font-size: 16px;
       line-height: 24px;
@@ -898,8 +887,26 @@ input[type="email"] {
       max-width: 230px;
       margin: 0 auto;
    }
+   .pricing__item__img img {
+      max-width: 220px;
+   }  
 }  
 @media  screen and (max-width: 767px) {
+   .title-h2{
+      font-size: 30px;
+   }
+   h3 {
+      font-size: 20px;
+      line-height: 28px;
+   }
+   .p-20 {
+      font-size: 14px;
+      line-height: 21px;
+   }
+   .p-16{
+      font-size: 13px;
+      line-height: 19px;
+   }
    .header {
       padding-top: 39px;
    }
@@ -940,8 +947,163 @@ input[type="email"] {
    .header__content__right img {
       max-width: 352px;
    }
-
+   .skills {
+      padding-top: 55px;
+      margin-right: 0;
+      margin-bottom: 73px;
+   }
+   .speaking__img {
+      padding-top: 0;
+   }
+   .speaking__img img,
+   .writing__img img,
+   .reading__img img,
+   .listening__img img {
+      max-width: 200px;
+   }
+   .button-common {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      border-radius: 5px;
+      min-width: 178px;
+      min-height: 50px;
+      margin-top: 10px;
+   }
+   .listening__content button {
+      margin-top: 10px;
+   }
+   .listening__img img{
+      padding-top: 40px;
+      margin-right: 0;
+   }
+   .about {
+      margin-bottom: 60px;
+   }
+   .about__left {
+      padding-left: 5px;
+      max-width: 340px;
+      & p {
+         font-size: 14px;
+         line-height: 21px;
+         margin-bottom: 20px;
+      }
+   }
+   .about__title {
+      margin-bottom: 0;
+   }
+   .about__left__items {
+      padding-left: 10px;
+      margin-right: 0;
+   }
+   .about__left__item {
+      & h2 {
+         font-size: 22px;
+         margin-bottom: 0;
+      } 
+   }
+   .about__right {
+      margin-top: 0;
+      & img {
+         margin-top: 30px;
+         max-width: 300px;      }
+   }
+   .pricing {
+      padding-bottom: 18px;
+   }
+   .contact {
+      padding-bottom: 54px;
+   }
+   .contact__img {
+      max-width: 280px;
+   }
+   .contact__img img{
+      margin-top: 59px;
+      margin-left: 13px;
+   } 
+   .contact__contain {
+      padding-top: 49px;
+      & p{
+         font-size: 14px;
+         line-height: 21px;
+      }
+   }
+   .contact__contain .title-h2 {
+      line-height: 44px;
+   }
+   input {
+      width: 283px;
+      height: 50px;
+      padding: 16px 4px 16px 24px ;
+      border-radius: 5px;
+      margin-right: 6px;
+   }
+   .contact__email {
+      padding-top: 24px;
+   }
+   .contact__email button {
+      width: 145px;
+      height: 50px;
+      font-size: 13px;
+      line-height: 19px;
+      border-radius: 5px;
+   }
+   .footer__content {
+      padding-left: 10px;
+      padding-right: 13px;
+   }
+   .footer__line {
+      max-width: 690px;
+      height: 1px;
+   }
+   .footer__item a {
+      font-size: 13px;
+      line-height: 19px;
+   }
+   .symbol {
+      font-size: 14px;
+   }
 } 
+@media  screen and (max-width: 735px) {
+   .skills__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: 
+      "one two"
+      "tree four";
+   }
+   .skills__grid__item {
+      justify-content: flex-start;
+      height: 100%;
+   }
+   .writing__content,
+   .reading__content,
+   .listening__content {
+      h3 {
+         padding-top: 15px;
+         margin-bottom: 7px;
+      }
+      button {
+         margin-top: 15px;
+      }
+   }
+
+   .speaking__content button {
+      margin-bottom: 19px;
+   }
+   .reading {
+      & .reading__img {
+         margin: 0 auto;
+      }
+   }
+   .listening {
+      flex-direction: column;
+      & .listening__img {
+         order: 0;
+         margin: 0 auto;
+      }
+   }   
+}
 @media  screen and (max-width: 575px) {
 }
 @media  screen and (max-width: 320px) {

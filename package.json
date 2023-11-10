@@ -19,6 +19,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",
     "gulp-less": "^5.0.0",
@@ -31,6 +32,8 @@
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify": "^3.0.2",
+    "gulp-version-number": "^0.2.4",
+    "gulp-webpcss": "^1.1.1",
     "sass": "^1.69.0"
   },
   "dependencies": {}

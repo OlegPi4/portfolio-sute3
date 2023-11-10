@@ -1,4 +1,4 @@
-const gulp = require('gulp');
+const gulp = require('gulp')
 const less = require('gulp-less')
 const rename = require('gulp-rename')
 const sass = require('gulp-sass')(require('sass'));
@@ -11,13 +11,10 @@ const imagemin = require('gulp-imagemin')
 const htmlmin = require('gulp-htmlmin')
 const size = require('gulp-size')
 const newer = require('gulp-newer')
-const browsersync = require('browser-sync')
+//const browsersync = require('browser-sync').create()
 const del = require('del')
-const sourcemap = require('gulp-sourcemaps');
-const ttf2woff2 = require('gulp-ttf2woff2');
-const version = require('gulp-version-number')
-const groupMedia = require('gulp-group-css-media-queries')
-//const webpcss = require('gulp-webpcss')
+const sourcemap = require('gulp-sourcemaps')
+const ttf2woff2 = require('gulp-ttf2woff2')
 
 const paths = {
     styles: {
@@ -49,12 +46,6 @@ const paths = {
 function clean() {
     return del(['dist/*', '!dist/img'])
 }
-/*Запуск сервера - не работает*/
-function stream() {
-    return gulp.src(paths.fonts.src)
-    .pipe(gulp.dest(paths.fonts.dest))
-    .pipe(browsersync.stream())
-}
 /*шрифты - пока только перенос в distr/font*/
 function fonts() {
     return gulp.src(paths.fonts.src)
@@ -71,26 +62,24 @@ function styles() {
         .pipe(sourcemap.init())
         //.pipe(less()) // при использовании less
         .pipe(sass().on('error', sass.logError))
-        .pipe(groupMedia())
-        // .pipe(webpcss( // продолжить настройку по фрилансеру
-        //     {
-        //         webpClass: ".webp",
-        //         noWebpClass: ".no-webp"
-        //     }
-        // ))
         .pipe(autoprefixer({
-            grid: true,
-            overrideBrowserslist: ["last 3 versions"],
-            cascade: false
+			cascade: false
+		}))
+        .pipe(cleaneCSS({
+            level:2
         }))
-        .pipe(gulp.dest(paths.styles.dest))
-        .pipe(cleaneCSS())
+        /*
+        .pipe(rename({
+            basename: 'main',
+            suffix: '.min'
+        }))*/
         .pipe(concat('style.min.css'))
         .pipe(sourcemap.write('.'))
         .pipe(size({
             showFiles: true,
         }))
         .pipe(gulp.dest(paths.styles.dest))
+        //.pipe(browsersync.stream())
 } 
 /*Обработка скриптов*/
 function scripts() {
@@ -106,6 +95,7 @@ function scripts() {
         showFiles: true,
     }))
     .pipe(gulp.dest(paths.scripts.dest))
+    //.pipe(browsersync.stream())
 }
 /*сжатие изображений*/
 function img() {
@@ -128,26 +118,17 @@ function html() {
     .pipe(size({
         showFiles: true,
     }))
-    .pipe(
-        version({
-            'value': '%DT%',
-            'append': {
-                'key': '_v',
-                'cover': 0,
-                'to': [
-                    'css',
-                    'js',
-                ]
-            },
-            'output': {
-                'file': 'gulp/version.json'
-            }
-        })
-    )
     .pipe(gulp.dest(paths.htmls.dest))
+    //.pipe(browsersync.stream())
 }
 /*Отслеживание изменений */
 function watch() {
+    //browsersync.init({
+    //    server: {
+    //        baseDir: "./dist"
+    //    }
+    //});
+    //gulp.watch(paths.htmls.dest).on('change', browsersync.reload)
     gulp.watch(paths.htmls.src, html)
     gulp.watch(paths.styles.src, styles)
     gulp.watch(paths.scripts.src, scripts)
@@ -155,10 +136,10 @@ function watch() {
     gulp.watch(paths.fonts.src, fonts)
     gulp.watch(paths.video.src, video)
 }
-/*запуск сценария действий*/
-const build = gulp.series(clean, html, gulp.parallel(styles, scripts, img, fonts, video), gulp.parallel(watch, stream))
 
-exports.stream = stream
+/*запуск сценария действий*/
+const build = gulp.series(clean, html, gulp.parallel(styles, scripts, img, fonts, video), watch)
+
 exports.fonts = fonts
 exports.video = video
 exports.clean = clean
