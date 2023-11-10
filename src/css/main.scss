@@ -136,6 +136,9 @@ h3{
    max-width: 120px;
    max-height: 120px;
 }
+.header-h1a {
+   display: none;
+}
 .header__content__left p{
    max-width: 540px;
    padding-top: 40px;
@@ -300,6 +303,9 @@ h3{
    display: flex;
    justify-content: space-between;
 }
+.about__title1 {
+   display: none;
+}
 .about__title {
    margin-bottom: 23px;
 }
@@ -419,6 +425,9 @@ justify-content: space-between;
 }
 .contact__contain {
    padding-top: 32px;
+}
+.contact__title1{
+   display: none;
 }
 .contact__text {
    padding-top: 38px;
@@ -1065,6 +1074,53 @@ input[type="email"] {
    }
 } 
 @media  screen and (max-width: 735px) {
+   .header__content {
+      flex-direction: column-reverse;
+      align-items: center;
+   }
+   .header__title img{
+      display: none;
+   }
+   .header__title{
+      max-width: 700px;
+      justify-content: center;
+      & h1{
+         max-width: 700px;
+      }
+   }
+   .header-h1{
+      display: none;
+   }
+   .header-h1a{
+      display: block;
+   }
+   .header__content__left{
+      max-width: 600px;
+      & p {
+         text-align: center;
+         max-width: 700px;
+      }
+   }
+   .header__button{
+      display: flex;
+      align-items: center;
+   }
+   .header__content__right {
+      margin-top: -40px;
+   }
+   .header__content__right img{
+      max-width: 452px;
+   }
+   .button-big {
+      min-width: 305px;
+      min-height: 75px;
+      padding: 24px 102px;
+      font-size: 18px;
+      text-align: center; 
+      border: none;
+      border-radius: 5px;
+      margin: auto;
+   }
    .skills__grid {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
@@ -1103,6 +1159,99 @@ input[type="email"] {
          margin: 0 auto;
       }
    }   
+   .about__title {
+      display: none;
+   }
+   .about__title1 {
+      padding-top: 30px;
+      display: block;
+      text-align: center;
+   }
+   .about__wrapper {
+      flex-direction: column-reverse;
+      justify-content: center;
+      align-items: center;
+   }
+   .about__left {
+      max-width: 700px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+   }
+   .about__left__items{
+      justify-content: space-around;
+      max-width: 700px;
+   }
+   .about__left__item {
+      & h2{
+         font-size: 24px;
+      }
+   }
+   .about__right img{
+      max-width: 352px;
+   }
+   .pricing__items {
+      display: flex;
+      flex-direction: column;
+   }
+   .pricing__item {
+      align-items: center;
+   }
+   .pricing__item__img img{
+         max-width: 290px;
+         margin: 0 auto;
+   }   
+   .pricing__item__h3{
+         font-size: 24px;
+         line-height: 28px;
+         text-align: center;
+   }
+   .up-1 p{
+      padding: 22px 0;
+      margin: 0 0;
+   }
+   .pricing__item__txt{
+         font-size: 14px;
+         line-height: 21px;
+         text-align: center;
+         padding: 22px 0px;
+         //margin: 0px 0px;
+      }
+   .pricing__item__lable {
+      margin: 0 0;
+      max-width: 220px;
+      height: 45px;
+      border-radius: 5px;
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+   .lable__price {
+      font-size: 22px;
+      line-height: 33px;
+      margin-right: 18px;
+   }
+   .lable__text {
+      font-size: 16px;
+      line-height: 24px;
+   }
+   .contact__wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   .contact__title {
+      display: none;
+   }
+   .contact__title1 {
+      padding-top: 30px;
+      display: block;
+   }
+   .contact__img img {
+      max-width: 350px;
+   }
+   .contact__text{
+      text-align: center;
+   }
 }
 @media  screen and (max-width: 575px) {
 }
