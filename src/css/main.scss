@@ -107,10 +107,10 @@ h3{
 .button-white:hover {
    background-color: var(--color-hover);
 } 
-.header__burger {
+.header__burger__img-sm {
    display: none;
 }
-.header__button__img {
+.header__burger__img {
    display: none;
 }
 .header__content {
@@ -493,6 +493,9 @@ input[type="email"] {
 .footer__items {
    display: flex;
 }
+.footer__items-320 {
+   display: none;
+}
 .footer__item {
    font-size: 24px;
    line-height: 36px;
@@ -835,17 +838,6 @@ input[type="email"] {
    }
 }
 @media  screen and (max-width: 920px) {
-   .header__menu {
-      display: none;
-   }
-   .button-white {
-      display: none;
-   }
-   .header__burger {
-      display: block;
-      display: flex;
-      flex-direction: column;
-   }
    
    .speaking__img img,
    .writing__img img,
@@ -896,6 +888,16 @@ input[type="email"] {
    }  
 }  
 @media  screen and (max-width: 767px) {
+   .header__menu {
+      display: none;
+   }
+   .button-white {
+      display: none;
+   }
+   .header__burger__img {
+      display: block;
+   }
+   
    .title-h2{
       font-size: 30px;
    }
@@ -917,6 +919,9 @@ input[type="email"] {
    .header__row-up {
       padding: 0 12px 0px 10px ;
    }
+   // .header__burger {
+   //    display: block;
+   // }
    .header__content {
       padding-left: 10px;
       padding-top: 18px;
@@ -950,6 +955,7 @@ input[type="email"] {
    }
    .header__content__right img {
       max-width: 352px;
+      width: 100%;
    }
    .skills {
       padding-top: 55px;
@@ -1105,6 +1111,7 @@ input[type="email"] {
    }
    .header__content__right img{
       max-width: 452px;
+      width: 100%;
    }
    .button-big {
       min-width: 305px;
@@ -1333,6 +1340,7 @@ input[type="email"] {
       padding-left: 0px;
       & img{
          max-width: 424px;
+         width: 100%;
       }
    }
    .header__content__left p{
@@ -1540,6 +1548,8 @@ input[type="email"] {
       margin-top: 17px;
    }
    input {
+      max-width: 335px;
+      width: 100%;
       margin-right: 0;
    }
    .footer__content {
@@ -1551,12 +1561,41 @@ input[type="email"] {
    }
 }
 @media  screen and (max-width: 420px) {
+   .button-big {
+      max-width: 335px;
+      width: 100%;
+      padding-left: 80px;
+      padding-right: 80px;
+   }
+   .about__right {
+      margin-right: 0;
+      & img{
+         width: 100%;
+      }
+   }
+
    .about__left__items {
       padding: 0 0;
       flex-direction: column;
    }
    .a-item1 {
       margin-right: 0;
+   }
+   .header__burger__img {
+      display: none;
+   }
+   .header__burger__img-sm {
+      display: block;
+   }
+   .footer__items {
+      display: none;
+   }
+   .footer__items-320 {
+      display: block;
+      align-items: center;
+   }
+   .footer__item {
+      text-align: center;
    }
 }
 @media  screen and (max-width: 320px) {
