@@ -1844,6 +1844,7 @@ input[type=email] {
 
   .header__title h1 {
     font-size: 34px;
+    text-align: center;
   }
 
   .button-big {
@@ -2022,5 +2023,133 @@ input[type=email] {
 
   .probel {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 555px) {
+  .contain {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .skills__wrapper {
+    margin-right: 0;
+  }
+
+  .skills__grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .skills__grid__item {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .speaking__img img,
+  .writing__img img,
+  .reading__img img,
+  .listening__img img {
+    max-width: 100%;
+  }
+
+  .speaking__content,
+  .writing__content,
+  .reading__content,
+  .listening__content {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 38px;
+  }
+
+  .speaking__content p,
+  .speaking__content .p2,
+  .writing__content p,
+  .writing__content .p2,
+  .reading__content p,
+  .reading__content .p2,
+  .listening__content p,
+  .listening__content .p2 {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .speaking__content h3,
+  .writing__content h3,
+  .reading__content h3,
+  .listening__content h3 {
+    font-size: 22px;
+  }
+
+  .speaking__content button,
+  .writing__content button,
+  .reading__content button,
+  .listening__content button {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-top: 30px;
+  }
+
+  .contact__contain p {
+    padding-left: 0;
+  }
+
+  form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .contact__email button {
+    max-width: 335px;
+    width: 100%;
+    margin-top: 17px;
+  }
+
+  input {
+    margin-right: 0;
+  }
+
+  .footer__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .logotype {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .about__left__items {
+    padding: 0 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .a-item1 {
+    margin-right: 0;
   }
 }
