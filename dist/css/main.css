@@ -32,6 +32,10 @@ body {
   font-weight: 400;
 }
 
+.sidenav {
+  display: none;
+}
+
 button,
 a {
   cursor: pointer;
@@ -1244,7 +1248,17 @@ input[type=email] {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .sidenav {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 767px) {
+  .sidenav {
+    display: block;
+  }
+
   .header__menu {
     display: none;
   }
