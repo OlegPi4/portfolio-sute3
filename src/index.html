@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Britlex</title>
     <link rel="icon" type="image/png" sizes="16x16"  href="../dist/img/favicon-16x16.png">
@@ -14,7 +15,22 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-   
+    <ul id="slide-out" class="sidenav">
+        <li><div class="sidebar__header">
+            <p class="sidebar__logotype">Brit<span>lex</span></p>
+            <a class="sidenav-close" href="#!">
+                <img src="../dist/img/close.png" alt="close">
+            </a>
+        </div></li>
+        <div class="sedebar__line"></div>
+        <li><a href="#!" class="sidebar-a">Home</a></li>
+        <li><a href="#!" class="sidebar-a">Skills</a></li>
+        <li><a href="#!" class="sidebar-a">About Us</a></li>
+        <li><a href="#!" class="sidebar-a">Pricing</a></li>
+        <li><a href="#!" class="sidebar-a">Contacts</a></li>
+        <li><a href="#!" class="sidebar__button-white">Let's Talk</a></li>
+        </ul>
+     
 <header class="header">
     <div class="contain">
         <div class="header__row-up">
@@ -28,10 +44,16 @@
             </ul>
             <button class="button-white">Let's Talk</button>
             <div class="header__burger__img-sm">
-                <img src="../dist/img/burger-sm.png" alt="">
+                <a data-target="slide-out" class="sidenav-trigger">
+                    <img src="../dist/img/burger-sm.png" alt="burger-menu">    
+                </a>
+                
             </div>
             <div class="header__burger__img">
-                <img src="../dist/img/burger.png" alt="">
+                <a data-target="slide-out" class="sidenav-trigger">
+                    <img src="../dist/img/burger.png" alt="burger-menu">    
+                </a>
+
             </div>
         </div>
         <div class="header__content">
@@ -53,6 +75,7 @@
         </div>
     </div>
 </header>
+
 <section class="skills">
     <div class="contain">
         <div class="skills__wrapper">
@@ -229,6 +252,7 @@
     
     
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../dist/js/main.min.js"></script>
 </body>
 </html>
